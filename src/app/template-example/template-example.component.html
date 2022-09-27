@@ -1,0 +1,29 @@
+<div>
+    <ng-container [ngTemplateOutlet]="greeter" [ngTemplateOutletContext]="myContext"></ng-container>
+    <ng-container [ngTemplateOutlet]="greeter2" [ngTemplateOutletContext]="myContext"></ng-container>
+    <ng-container [ngTemplateOutlet]="fromParentTemplate" [ngTemplateOutletContext]="myContext"></ng-container>
+    <!-- <ng-container [ngTemplateOutlet]="fromParentTemplate"></ng-container> -->
+</div>
+
+
+
+
+<!-- <p>Hello from template</p> -->
+<ng-template #template1>
+    <p>My Template</p>
+</ng-template>
+<ng-template #template2>
+    <p>My Template2</p>
+</ng-template>
+<ng-template #template3>
+    <p>My Template3</p>
+</ng-template>
+
+<ng-template let-greet="greet" let-name="name" #greeter>
+    <p>{{greet}} {{name}}</p>
+</ng-template>
+
+<ng-template let-greet="greet" let-name let-welcome #greeter2>
+    <p>{{greet}} {{name}} {{welcome}}</p>
+</ng-template>
+<!-- <p>Bye from template</p> -->
